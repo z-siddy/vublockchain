@@ -1,0 +1,20 @@
+//
+// Created by zygsi on 9/13/2019.
+//
+
+#ifndef VUBLOCKCHAIN_MAIN_H
+#define VUBLOCKCHAIN_MAIN_H
+
+#define version "v0.1"
+#define blockSize 16
+
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::endl;
+using std::cin;
+using std::string;
+
+
+#endif //VUBLOCKCHAIN_MAIN_H
