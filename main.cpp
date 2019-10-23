@@ -12,7 +12,10 @@ int main() {
     cout << "Please enter a string value to hash: " << endl;
     cin >> in;
 
-    Hash obj = Hash(in);
+    Hash obj;
+    obj.getInput(in);
+
+    cout << obj.hashThis();
 
 
 

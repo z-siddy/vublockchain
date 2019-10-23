@@ -6,7 +6,6 @@
 #define VUBLOCKCHAIN_MAIN_H
 
 #define version "v0.1"
-#define blockSize 16
 
 #include <iostream>
 #include <string>
