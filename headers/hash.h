@@ -42,8 +42,8 @@ namespace hash {
             }
         };
         void getHashedValue() {
-            long long int seed = _inputValue.length() * _inputValue.length();
-            std::mt19937 rand(seed);
+            long long int seed = std::accumulate(hashVec.begin(), hashVec.end(), hashVec.size()) + (int)_inputValue[0]*6969/(_inputValue.length()+2) * 69;
+            std::mt19937 rand(seed + 69.69);
             std::uniform_int_distribution<int> variant(0,2);
             std::uniform_int_distribution<int> number(48, 57);
             std::uniform_int_distribution<int> letter(97, 102);
@@ -65,13 +65,6 @@ namespace hash {
             _inputValue = in;
         };
 
-        void readFile(std::ifstream *input) {
-            if(*input){
-                string fileInput ((std::istreambuf_iterator<char>(*input)), std::istreambuf_iterator<char>());
-                _inputValue = fileInput;
-            }
-            else throw "Error while opening the input file.";
-        };
 
         string hashThis() {
             divideToBlocks();

@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
             cout << "ERROR! No valid input file were found." << endl;
             return 0;
         }
-        else if(file.is_open() && file.good()) {
+        else {
             std::string stringFromFile((std::istreambuf_iterator<char>(file)),(std::istreambuf_iterator<char>()));
             obj.getInput(stringFromFile);
             cout << "HASHED FILE OUTPUT: " << endl;
