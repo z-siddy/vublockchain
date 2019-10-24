@@ -3,4 +3,4 @@ project(vublockchain)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(vublockchain main.cpp headers/hash.h headers/main.h)
+add_executable(vublockchain headers/hash.h headers/main.h main.cpp)

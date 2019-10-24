@@ -16,15 +16,18 @@ namespace hash {
 
     class Timer {
     private:
-        std::chrono::time_point<std::chrono::high_resolution_clock> time;
+        std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
+        std::chrono::duration<float> duration;
     public:
-        Timer() : time {std::chrono::high_resolution_clock::now()} {}
-        double timePassed() {
-            return
-                std::chrono::duration<double> (std::chrono::high_resolution_clock::now() - time).count();
+        void startClock() {
+            start = std::chrono::high_resolution_clock::now();
         }
-        void timerReset() {
-            time = std::chrono::high_resolution_clock::now();
+
+        void endClock(string opName) {
+            end = std::chrono::high_resolution_clock::now();
+            duration = end-start;
+            cout << endl << opName <<  " took: " << duration.count() << " s" << std::endl;
+
         }
     };
 
