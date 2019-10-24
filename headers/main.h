@@ -9,6 +9,8 @@
 
 #include <iostream>
 #include <string>
+#include <random>
+#include <algorithm>
 
 using std::cout;
 using std::endl;

@@ -72,3 +72,7 @@ File hashing process took: 0 s
  File hashing process took: 0.0029906 s
 `
 
+## Collision count in 1 000 000 random pairs of 5-char strings 
+`Generation and hashing process took: 69.3673 s`
+
+`Number of collisions: 109`
