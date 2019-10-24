@@ -76,3 +76,8 @@ File hashing process took: 0 s
 `Generation and hashing process took: 69.3673 s`
 
 `Number of collisions: 109`
+
+## Collision count in 1 000 000 random pairs of 5-char strings that differ only by one char 
+`Generation and hashing process took: 54.3357 s`
+
+`Number of collisions: 0`

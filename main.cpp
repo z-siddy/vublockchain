@@ -25,11 +25,12 @@ int main(int argc, char **argv) {
     cout << "------Choose an option------" << endl;
     cout << "1 - HASH A FILE (CMD arg)" << endl;
     cout << "2 - HASH A CUSTOM STRING (Console input)" << endl;
-    cout << "3 - COLLISION TEST WITH 1 000 000 STRING-O-PAIRS" << endl;
+    cout << "3 - COLLISION TEST WITH 1M STRING-O-PAIRS" << endl;
+    cout << "4 - COLLISION TEST WITH 1M PAIRS OF STRINGS (1 char diff)" << endl;
     int choice;
     cin >> choice;
 
-    while (cin.fail() || (choice != 1 && choice != 2 && choice != 3)) {
+    while (cin.fail() || (choice != 1 && choice != 2 && choice != 3 && choice != 4)) {
         cout << "Wrong input! Enter your choice:" << endl;
         cin.clear();
         cin.ignore(256, '\n');
@@ -49,7 +50,7 @@ int main(int argc, char **argv) {
             cout << "HASHED FILE OUTPUT: " << endl;
             timer.startClock();
             cout << obj.hashThis();
-            timer.endClock("File hashing process");
+            timer.endClock("[1]File hashing process");
         }
     }
     else if(choice == 2){
@@ -59,7 +60,7 @@ int main(int argc, char **argv) {
         cout << "HASHED STRING OUTPUT: " << endl;
         timer.startClock();
         cout << obj.hashThis();
-        timer.endClock("Custom string hashing process");
+        timer.endClock("[2]Custom string hashing process");
     }
     else if(choice == 3) {
         int collisions = 0;
@@ -75,7 +76,25 @@ int main(int argc, char **argv) {
             if(h1.hashThis() == h2.hashThis())
                 collisions++;
         }
-        timer.endClock("Generation and hashing process");
+        timer.endClock("[3]Generation and hashing process");
+        cout << endl << "Number of collisions: " << collisions;
+    }
+    else if(choice == 4){
+        int collisions = 0;
+        timer.startClock();
+        for(int i=1;i<1000000;i++){
+            string a = random_string();
+            string b = a;
+            b[0] += 1;
+            while(a == b)
+                b[0] -= 1;
+            Hash h1,h2;
+            h1.getInput(a);
+            h2.getInput(b);
+            if(h1.hashThis() == h2.hashThis())
+                collisions++;
+        }
+        timer.endClock("[4]Generation and hashing process");
         cout << endl << "Number of collisions: " << collisions;
     }
 
